@@ -1,0 +1,21 @@
+---
+# FILE: install_salt.yml
+#
+# This is just a sample playbook that would apply the roles to the servers created via vagrant
+#
+
+# Apply the db role
+- hosts: dbserver
+  remote_user: root
+  sudo: yes
+  roles:
+    - { role: base-linux, tags: base-linux }
+#    - { role: dbserver, tags: dbserver }
+
+# Apply the web role
+- hosts: webserver
+  remote_user: root
+  sudo: yes
+  roles:
+    - { role: base-linux, tags: base-linux }
+#    - { role: webserver, tags: webserver }
